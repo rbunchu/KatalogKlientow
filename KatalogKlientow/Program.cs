@@ -21,6 +21,12 @@ namespace KatalogKlientow
             System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("pl");
             System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("pl");
 
+
+
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddAppServices();
+            Services = serviceCollection.BuildServiceProvider();
+
             Application.ThreadException += Application_ThreadException;
 
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
@@ -30,10 +36,6 @@ namespace KatalogKlientow
                     .Log(e.Exception);
                 e.SetObserved();
             };
-
-            var serviceCollection = new ServiceCollection();
-            serviceCollection.AddAppServices();
-            Services = serviceCollection.BuildServiceProvider();
 
             var databaseInitializer = Services.GetRequiredService<Infrastructure.DatabaseInitializer>();
 
