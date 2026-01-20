@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="./KatalogKlientow.Tests/KatalogKlientow.Tests.csproj" Id="804d78f9-d495-4bf5-bcfe-4798835fd2d1" />
+  <Project Path="./KatalogKlientow/KatalogKlientow.csproj" Id="94df9df0-8c2d-4f19-8844-511bf5476d60" />
+</Solution>
